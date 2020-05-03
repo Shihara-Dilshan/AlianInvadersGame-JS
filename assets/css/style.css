@@ -31,8 +31,11 @@
 
 .laser {
   background-color: yellow;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
 }
 
 .boom {
   background-color: red;
+  border-radius: 50%;
 }

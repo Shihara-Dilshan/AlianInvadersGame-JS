@@ -116,11 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100);
       }
     }
-    document.addEventListener("keyup", (event) => {
-      if (event.keyCode === 32) {
+
+    switch (event.keyCode) {
+      case 32:
         laserId = setInterval(moveLaser, 100);
-      }
-    });
+        break;
+    }
   }
   document.addEventListener("keyup", shoot);
 });
