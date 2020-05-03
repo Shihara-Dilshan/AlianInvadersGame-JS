@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let width = 10;
   let curruntAleanPoint = 0;
-  let shooterPosition = 94;
+  let shooterPosition = 95;
   let alienInvadersTakenDown = [];
   let result = 0;
   let direction = 1;
@@ -35,5 +35,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //move invaders
-  function moveInvaders() {}
+  function moveInvaders() {
+    const leftEdge = aleanInvaders[0] % width === 0;
+    const rightEdge =
+      aleanInvaders[aleanInvaders.length - 1] % width === width - 1;
+
+    if ((leftEdge && direction === -1) || (rightEdge && direction === 1)) {
+      direction = width;
+    } else if (direction === width) {
+      if (leftEdge) direction = 1;
+      else direction = -1;
+    }
+
+    for (let i = 0; i <= aleanInvaders.length - 1; i++) {
+      aleans[aleanInvaders[i]].classList.remove("aleans");
+    }
+    for (let i = 0; i <= aleanInvaders.length - 1; i++) {
+      aleanInvaders[i] += direction;
+    }
+    for (let i = 0; i <= aleanInvaders.length - 1; i++) {
+      aleans[aleanInvaders[i]].classList.add("aleans");
+    }
+  }
+
+  invaderId = setInterval(moveInvaders, 500);
 });
