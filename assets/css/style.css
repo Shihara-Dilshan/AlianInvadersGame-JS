@@ -1,0 +1,26 @@
+.grid {
+  border: 5px solid;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid div {
+  width: 10%;
+  height: 10%;
+  border: 1px solid;
+}
+
+.aleans {
+  background-color: teal;
+  border-radius: 50%;
+}
+
+.shooter {
+  background-color: red;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
