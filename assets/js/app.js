@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let aleans = document.querySelectorAll(".grid div");
   let scoreBoard = document.querySelector("#scoreBoard");
+  let final = document.getElementById("finalBOard");
 
   let width = 10;
   let curruntAleanPoint = 0;
@@ -55,6 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     for (let i = 0; i <= aleanInvaders.length - 1; i++) {
       aleans[aleanInvaders[i]].classList.add("aleans");
+    }
+
+    //game over
+    if (aleans[shooterPosition].classList.contains("aleans", "shooter")) {
+      final.textContent = "Game Over!";
+      clearInterval(invaderId);
+    }
+
+    for (let i = 0; i <= aleanInvaders.length - 1; i++) {
+      if (aleanInvaders[i] > aleans.length - (width - 1)) {
+        final.textContent = "Game Over!";
+        clearInterval(invaderId);
+      }
     }
   }
 

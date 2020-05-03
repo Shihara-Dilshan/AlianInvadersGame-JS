@@ -1,5 +1,4 @@
 .grid {
-  border: 5px solid;
   width: 500px;
   height: 500px;
   margin: 50px auto;
@@ -11,7 +10,6 @@
 .grid div {
   width: 10%;
   height: 10%;
-  border: 1px solid;
 }
 
 .aleans {
@@ -23,4 +21,14 @@
   background-color: red;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
+}
+
+#finalBOard {
+  font-size: 50px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.laser {
+  background-color: yellow;
 }
